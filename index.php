@@ -18,8 +18,6 @@ require_once "metodosCrud.php";
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-  
-    <br><br>
     <div class="container ">
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
@@ -31,24 +29,29 @@ require_once "metodosCrud.php";
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <label for="marca">Marca de auto</label>
-                                        <input type="text" require class="form-control" name="marca" required>
+                                        <select name="marca" id="marca" class="form-control">
+                                            <option value="Mazda">Mazda</option>
+                                            <option value="BMW">BMW</option>
+                                            <option value="Subaru">Subaru</option>
+                                        </select>
+
 
                                         <label for="color">Selecciona un color</label>
 
 
                                         <br><label for="color">Rojo</label>
-                                        <input type="checkbox" name="color" id="color" value="rojo">
+                                        <input type="radio" name="color" id="color" value="rojo" >
 
                                         <label for="color">azul</label>
-                                        <input type="checkbox" name="color" id="color" value="azul">
+                                        <input type="radio" name="color" id="color" value="azul">
 
                                         <label for="color">negro</label>
-                                        <input type="checkbox" name="color" id="color" value="azul">
+                                        <input type="radio" name="color" id="color" value="azul">
                                         
 
 
                                         <br><label for="descripcion">Descripcion</label>
-                                        <textarea name="descripcion" id="descripcion" cols="30" rows="10"  class="form-control" require></textarea>
+                                        <textarea name="descripcion" id="descripcion" cols="10" rows="10"  class="form-control" require></textarea>
                                         <br>
                                         <button class="btn btn-info">Agregar</button>
 
@@ -59,13 +62,15 @@ require_once "metodosCrud.php";
                     </div>
                     <hr>
                     <div class="row">
-                        <table class="table table-striped table-hover text-center" border="2"  style="text-align: center">
+                        <table class="table" style="text-align: center">
+                            <thead>
                             <tr>
-                                <td>Marca</td>
-                                <td>color</td>
-                                <td>Descripcion</td>
-                                <td>Eliminar</td>
+                                <th scope="col">Marca</th>
+                                <th scope="col">color</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Eliminar</th>
                             </tr>
+                            </thead>
 
                                 <?php
                                     $obj= new metodos();
